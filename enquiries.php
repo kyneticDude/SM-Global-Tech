@@ -16,6 +16,7 @@ $email    = $_POST['email'];
 $city     = $_POST['city'];
 $employees     = $_POST['employees'];
 $servers     = $_POST['servers'];
+$option     = $_POST['option'];
 $comments = $_POST['comments'];
 
 if(trim($company_name) == '') {
@@ -47,6 +48,9 @@ if(trim($city) == '') {
 } else if(trim($contact) == '') {
 	echo '<div class="error_message">Attention! You must enter contact details.</div>';
 	exit();
+} else if(trim($option) == '') {
+	echo '<div class="error_message">Attention! Please make a selection.</div>';
+	exit();
 } else if(trim($comments) == '') {
 	echo '<div class="error_message">Attention! Please enter your message.</div>';
 	exit();
@@ -77,8 +81,8 @@ $e_subject = 'You\'ve been contacted by ' . $company_name . '.';
 // You can change this if you feel that you need to.
 // Developers, you may wish to add more fields to the form, in which case you must be sure to add them here.
 
-$e_body = "You have been contacted by $contact from $company_name, telephone number $phone their additional message is as follows." . PHP_EOL . PHP_EOL;
-$e_content = "\"$comments\"" . PHP_EOL . PHP_EOL;
+$e_body = "You have been contacted by $contact from $company_name, telephone number $phone, in regards to $option and their additional message is as follows." . PHP_EOL . PHP_EOL;
+$e_content = "\n Area: $city \n No. of employees: $employees \n Servers: $servers \n Message: $comments" . PHP_EOL . PHP_EOL;
 $e_reply = "You can contact $contact via email, $email";
 
 $msg = wordwrap( $e_body . $e_content . $e_reply, 70 );

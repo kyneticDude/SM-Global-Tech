@@ -58,8 +58,20 @@ ul.customlist {
 .contact-details {
 	text-align: center;
 	display: block;
-	padding-bottom: 40px;
-	padding-top: 40px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	& a {
+		color: $smgt-primary;
+		&:hover {
+			color: $smgt-red;
+		}
+	}
+}
+@media (min-width: $screen-sm-min) {
+	.contact-details {
+		padding-bottom: 40px;
+		padding-top: 40px;
+	}
 }
 .glyph {
 	display: block;

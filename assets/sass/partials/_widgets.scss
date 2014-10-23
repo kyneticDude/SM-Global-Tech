@@ -13,61 +13,68 @@
 	position: relative;
 	.liquid-col {
 		display: block;
-		width: auto;
+		@include make-xs-column(12);
+		padding-top: 5%;
 	}
 	@media (min-width: $screen-sm-min) {
 		.liquid-col {
-			margin-left: 40%;
+			@include make-sm-column(8);
+			@include make-sm-column-offset(4);
+			padding-top: 10%;
 		}
 	}
+	@media (min-width: $screen-md-min) {
+		.liquid-col {
+			@include make-sm-column(6);
+			@include make-sm-column-offset(6);
+		}
+	}
+
 }
 .inset-jumbo {
 	background: $smgt-blue url(../images/backgrounds/inset-header-img-1.jpg) no-repeat;
-	height: 359px;
+	max-height: 250px;
+	background-position: top center;
+	width: 100%;
 	color: #fff;
+	*zoom: 1;
 	.jumbo-position {
-		padding: 75px 0 0;
-		display: block;
-		.lrg-heading h3 {
-			color: #333;
-			font-size: 24px;
-			line-height: 36px;
-			&:after {
-				content: "";
-				display: inline-block;
-				position: absolute;
-				bottom: -5px;
-				height: 2px;				
-				text-align: center;
-			}
+		padding: 8px 0 0;
+	}
+	@media (min-width: $screen-sm-min) {
+		.jumbo-position {
+			padding: 70px 0 0;
 		}
-		.sm-hd {
-			h3:after {
-				width: 15%;
-				left: 42.5%;
-				border: 1px solid #333;
-			}
-		}
-		.md-hd {
-			h3:after {
-				width: 35%;
-				left: 33%;
-				border: 1px solid #333;
-			}
-		}
-		.lg-hd {
-			h3:after {
-				width: 35%;
-				left: 33%;
-				border: 1px solid #333;
-			}
-		}
-		p {
-			font-size: 16px;
-			line-height: 24px;
-			color: #fff;
-			text-transform: uppercase;
-		}
+	}
+}
+.bitmap-head {
+	text-align: center;
+	position: relative;
+	display: block;
+	& img {
+		margin: 0 auto;
+		@extend .img-responsive;
+	}
+}
+.sm-hd {
+	h3:after {
+		width: 15%;
+		left: 42.5%;
+		border: 1px solid #333;
+	}
+}
+.md-hd {
+	h3:after {
+		width: 35%;
+		left: 33%;
+		border: 1px solid #333;
+	}
+}
+.lg-hd {
+	h3:after {
+		width: 35%;
+		left: 33%;
+		border: 1px solid #333;
 	}
 }
 
@@ -155,8 +162,26 @@ ul.ls-thumbnail {
 }
 
 .sub-wrap {
-	padding: 60px 0;
+	padding: 20px 0;
 }
+@media (min-width: $screen-sm-min) {
+	.sub-wrap {
+		padding: 60px 0;
+	}
+}
+
+/* LAVA LAMP NAVIGATION */
+.lavalamp-object {
+    background-color: transparent;
+    border-bottom: 2px solid #e74c3c;
+    margin: 0px;
+    padding: 0;
+}
+.lavalamp-item {
+    margin-top: 0;
+    border-bottom: 2px solid transparent;
+}
+
 
 /* FORM */
 form.contact-form {

@@ -114,7 +114,8 @@ h5 {
 	p.lead-lrg {
 		font-size: 24px;
 		line-height: 36px;
-		color: $smgt-blue;
+		color: #fff;
+		font-weight: normal;
 	}
 }
 .col-mid p {
@@ -147,9 +148,6 @@ footer {
 		padding: 0;
 		list-style-type: none;
 
-		li a {
-			color: #fff;
-		}
 		.details {
 			padding-right: 20px;
 			width: 90px;
@@ -159,5 +157,7 @@ footer {
 	}
 	p.copyright-print {
 		font-size: 10.21px;
+		margin: 0;
+		line-height: 30px;
 	}
 }

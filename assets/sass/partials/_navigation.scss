@@ -36,20 +36,10 @@ nav {
 		border-bottom: 1px solid $smgt-secondary;
 		box-sizing: border-box;
 		&.active {
-			/*border-bottom: 2px solid $smgt-red;*/
+			border-bottom: 2px solid $smgt-red;
 			a {
 				color: $smgt-red;
 				position: relative;
-				&:before {
-					content: "";
-					display: block;
-					position: absolute;
-					top: -2px;
-					left: 40%;
-					border-left: 10px solid transparent;
-					border-right: 10px solid transparent;
-					border-top: 10px solid $smgt-red;
-				}
 			}
 		}
 	}
@@ -118,11 +108,15 @@ nav {
 		background: darken($smgt-red, 5%);
 		line-height: 27px;
 		box-shadow: inset 2px 0 1px rgba(0,0,0,0.2);
+		li:hover {
+			background: darken($smgt-red, 10%);
+			box-shadow: inset 2px 0 1px rgba(0,0,0,0.2);
+		}
 		& a {
 			padding: 0 10px;
 			&:hover {
 				color: #fff;
-				text-decoration: underline;
+				text-decoration: none;
 			}
 		}
 	}
